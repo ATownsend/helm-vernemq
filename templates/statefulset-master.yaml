@@ -59,6 +59,11 @@ spec:
               port: status
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+          volumeMounts:
+{{ toYaml .Values.volumeMounts | indent 12 }}
+        volumes:
+{{ toYaml .Values.volumes | indent 10 }}
+
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
